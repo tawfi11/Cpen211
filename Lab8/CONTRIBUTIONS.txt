@@ -1,0 +1,14 @@
+Partner 1:
+made lab7_top_tb.v to test lab7_top
+altered CPU to output correct signals
+altered datapath to receive correct signals
+created tri-state buffer module
+connected RAM to CPU, with appropriate connectors as seen in stage 1
+created new FSM states and outputs for STR and LDR functions
+defined outputs for new FSM states
+created chipsets seen in stage 3
+made files compatible with autograder
+
+
+Partner 2:
+Worked on new states in FSM, connections for cpu (within) and lab7_top, test files test4,test1

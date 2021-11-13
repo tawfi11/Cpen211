@@ -1,0 +1,97 @@
+module datapath_tb();
+	reg clk; 
+	reg [2:0] readnum; 
+	reg vsel; 
+	reg loada;
+	reg loadb; 
+	reg [1:0]shift; 
+	reg asel, bsel; 
+	reg [1:0] ALUop; 
+	reg loadc, loads; 
+	reg [2:0] writenum; 
+	reg write; 
+	reg [15:0] datapath_in;
+	reg Z_out;
+	wire [15:0] datapath_out;
+	
+	datapath dut (clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, loadc, loads, writenum, write, datapath_in, Z_out, datapath_out);
+	
+	initial begin
+		clk = 0;
+		#5;
+		forever begin
+			clk = 1;
+			#5;
+			clk = 0;
+			#5;
+		end
+	end
+	
+	initial begin
+		datapath_in = 16'd42;
+		vsel = 1'b1;
+		writenum = 3'd3;
+		write = 1'b1;
+		
+		
+		shift = 2'b00;
+		asel = 1'b0;
+		bsel = 1'b0;
+		ALUop = 2'b00;
+		loadc = 1'b1;
+		
+		#10;
+		
+		datapath_in = 16'd13;
+		writenum = 3'd5;
+		
+		#10;
+		
+		
+		loada = 1'b0;
+		readnum = 3'd3;
+		loadb = 1'b1;
+		
+		#10;
+		
+		loadb = 1'b0;`
+		readnum = 3'd5;
+		loada = 1'b1;
+		
+		
+
+		
+		
+		
+		#10;
+		#10;
+		
+		$display("%d", datapath_out);
+		
+		
+		vsel = 0;
+		writenum = 3'd2;
+		
+		#10;
+		
+		readnum = 3'd3;
+		loada = 0;
+		loadb = 1;
+		
+		#10;
+		
+		asel = 1;
+		
+		#10;
+		
+		#10;
+		
+		$display("%d", datapath_out);
+		
+		
+		$stop;
+		
+	end
+	
+endmodule
+		

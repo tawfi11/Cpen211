@@ -1,0 +1,117 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -13.176
+TNS   : -112.691
+
+Type  : Slow 1100mV 85C Model Setup 'KEY[0]'
+Slack : -8.704
+TNS   : -1140.133
+
+Type  : Slow 1100mV 85C Model Hold 'KEY[0]'
+Slack : -7.035
+TNS   : -935.555
+
+Type  : Slow 1100mV 85C Model Hold 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -1.927
+TNS   : -7.948
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -116.205
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -8.465
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -0.239
+TNS   : -0.665
+
+Type  : Slow 1100mV 0C Model Setup 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -12.841
+TNS   : -109.879
+
+Type  : Slow 1100mV 0C Model Setup 'KEY[0]'
+Slack : -8.331
+TNS   : -1082.013
+
+Type  : Slow 1100mV 0C Model Hold 'KEY[0]'
+Slack : -6.874
+TNS   : -917.361
+
+Type  : Slow 1100mV 0C Model Hold 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -1.855
+TNS   : -8.456
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.394
+TNS   : -108.404
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -9.038
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -0.193
+TNS   : -0.895
+
+Type  : Fast 1100mV 85C Model Setup 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -7.863
+TNS   : -64.161
+
+Type  : Fast 1100mV 85C Model Setup 'KEY[0]'
+Slack : -5.492
+TNS   : -682.192
+
+Type  : Fast 1100mV 85C Model Hold 'KEY[0]'
+Slack : -4.238
+TNS   : -564.492
+
+Type  : Fast 1100mV 85C Model Hold 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -1.276
+TNS   : -4.304
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.339
+TNS   : -61.386
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.092
+TNS   : -1.413
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -0.066
+TNS   : -0.116
+
+Type  : Fast 1100mV 0C Model Setup 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -7.273
+TNS   : -60.513
+
+Type  : Fast 1100mV 0C Model Setup 'KEY[0]'
+Slack : -4.587
+TNS   : -574.944
+
+Type  : Fast 1100mV 0C Model Hold 'KEY[0]'
+Slack : -4.164
+TNS   : -571.030
+
+Type  : Fast 1100mV 0C Model Hold 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : -1.118
+TNS   : -4.041
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'KEY[0]'
+Slack : -0.317
+TNS   : -60.430
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.090
+TNS   : -1.373
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'cpu:U|Counter6:Statecount|vDFF:count|Q[0]'
+Slack : 0.022
+TNS   : 0.000
+
+------------------------------------------------------------

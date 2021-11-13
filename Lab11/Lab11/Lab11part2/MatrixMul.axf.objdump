@@ -1,0 +1,184 @@
+
+C:/Users/User/Desktop/Lab11part2/MatrixMul.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+.global Array_A
+.global Array_B
+.global Array_C
+
+mm:
+    mov r7, #3
+   0:	e3a07003 	mov	r7, #3
+    SUB  sp,sp, #24     //  make room on stack for 3 registers
+   4:	e24dd018 	sub	sp, sp, #24
+    STR  r4, [sp, #20]  //  save r4 on stack
+   8:	e58d4014 	str	r4, [sp, #20]
+    STR  r5, [sp, #16]  //  save r5 on stack
+   c:	e58d5010 	str	r5, [sp, #16]
+    STR  r6,  [sp, #12] //  save r6 on stack
+  10:	e58d600c 	str	r6, [sp, #12]
+    str r7, [sp, #8]
+  14:	e58d7008 	str	r7, [sp, #8]
+    str r8, [sp, #4]
+  18:	e58d8004 	str	r8, [sp, #4]
+    str r9, [sp, #0]
+  1c:	e58d9000 	str	r9, [sp]
+    MOV   r3,  #0   //  i = 0// initialize 1st for loop
+  20:	e3a03000 	mov	r3, #0
+
+00000024 <L1>:
+L1: 
+    MOV   r4,  #0  //  j = 0// restart 2nd for loop
+  24:	e3a04000 	mov	r4, #0
+
+00000028 <L2>:
+L2: 
+    MOV   r5,  #0  //  k = 0// restart 3rd for loop
+  28:	e3a05000 	mov	r5, #0
+    mul r9, r3, r7 //multiply i by row size (n)
+  2c:	e0090793 	mul	r9, r3, r7
+    add r6, r4, r9 //add the product and j to get address of xij
+  30:	e0846009 	add	r6, r4, r9
+    add r6, r0, r6, LSL #3 //convert into bytes
+  34:	e0806186 	add	r6, r0, r6, lsl #3
+  38:	0d964b00 	.word	0x0d964b00
+
+0000003c <L3>:
+    .word 0b00001101100101100100101100000000 //0b = binary
+    //FLDD d4, [xijAddr, #0] 
+L3:
+    mul r9, r5, r7
+  3c:	e0090795 	mul	r9, r5, r7
+    add r12, r4, r9
+  40:	e084c009 	add	r12, r4, r9
+    add r12, r2, r12, LSL#3
+  44:	e082c18c 	add	r12, r2, r12, lsl #3
+  48:	0d9c2b00 	.word	0x0d9c2b00
+    .word 0b00001101100111000010101100000000
+    //FLDD d2, [tempAddr, #0]
+    mul r9, r3, r7
+  4c:	e0090793 	mul	r9, r3, r7
+    add r12, r5, r9
+  50:	e085c009 	add	r12, r5, r9
+    add r12, r1, r12, LSL #3
+  54:	e081c18c 	add	r12, r1, r12, lsl #3
+  58:	0d9c6b00 	.word	0x0d9c6b00
+  5c:	0e262b02 	.word	0x0e262b02
+  60:	0e344b02 	.word	0x0e344b02
+    //FLDD d6, [tempAddr, #0]
+    .word 0b00001110001001100010101100000010
+    //FMULD d2, d6, d2
+    .word 0b00001110001101000100101100000010
+    //FADDD d4, d4, d2
+    ADD r5, r5, #1
+  64:	e2855001 	add	r5, r5, #1
+    CMP r5, r7
+  68:	e1550007 	cmp	r5, r7
+    blt L3
+  6c:	bafffff2 	blt	3c <L3>
+  70:	0d864b00 	.word	0x0d864b00
+    .word 0b00001101100001100100101100000000
+    //FSTD d4, [xijAddr, #0]
+    add r4,r4, #1
+  74:	e2844001 	add	r4, r4, #1
+    cmp r4, r7
+  78:	e1540007 	cmp	r4, r7
+    blt L2
+  7c:	baffffe9 	blt	28 <L2>
+    add r3,r3, #1
+  80:	e2833001 	add	r3, r3, #1
+    cmp r3, r7
+  84:	e1530007 	cmp	r3, r7
+    blt L1
+  88:	baffffe5 	blt	24 <L1>
+
+
+     ldr  r4, [sp, #20]  //  save r4 on stack
+  8c:	e59d4014 	ldr	r4, [sp, #20]
+    ldr  r5, [sp, #16]  //  save r5 on stack
+  90:	e59d5010 	ldr	r5, [sp, #16]
+    ldr  r6,  [sp, #12] //  save r6 on stack
+  94:	e59d600c 	ldr	r6, [sp, #12]
+    ldr r7, [sp, #8]
+  98:	e59d7008 	ldr	r7, [sp, #8]
+    ldr r8, [sp, #4]
+  9c:	e59d8004 	ldr	r8, [sp, #4]
+    ldr r9, [sp, #0]
+  a0:	e59d9000 	ldr	r9, [sp]
+
+    add sp, sp, #24
+  a4:	e28dd018 	add	sp, sp, #24
+
+    mov pc, lr 
+  a8:	e1a0f00e 	mov	pc, lr
+
+000000ac <Array_A>:
+  ac:	9374bc6a 	.word	0x9374bc6a
+  b0:	3ff00418 	.word	0x3ff00418
+  b4:	26e978d5 	.word	0x26e978d5
+  b8:	3ff00831 	.word	0x3ff00831
+  bc:	ba5e353f 	.word	0xba5e353f
+  c0:	3ff00c49 	.word	0x3ff00c49
+  c4:	49ba5e35 	.word	0x49ba5e35
+  c8:	4000020c 	.word	0x4000020c
+  cc:	9374bc6a 	.word	0x9374bc6a
+  d0:	40000418 	.word	0x40000418
+  d4:	dd2f1aa0 	.word	0xdd2f1aa0
+  d8:	40000624 	.word	0x40000624
+  dc:	49ba5e35 	.word	0x49ba5e35
+  e0:	4008020c 	.word	0x4008020c
+  e4:	9374bc6a 	.word	0x9374bc6a
+  e8:	40080418 	.word	0x40080418
+  ec:	dd2f1aa0 	.word	0xdd2f1aa0
+  f0:	40080624 	.word	0x40080624
+
+000000f4 <Array_B>:
+  f4:	00000000 	.word	0x00000000
+  f8:	3ff00000 	.word	0x3ff00000
+  fc:	00000000 	.word	0x00000000
+ 100:	3ff00000 	.word	0x3ff00000
+ 104:	00000000 	.word	0x00000000
+ 108:	3ff00000 	.word	0x3ff00000
+ 10c:	00000000 	.word	0x00000000
+ 110:	40000000 	.word	0x40000000
+ 114:	00000000 	.word	0x00000000
+ 118:	40000000 	.word	0x40000000
+ 11c:	00000000 	.word	0x00000000
+ 120:	40000000 	.word	0x40000000
+ 124:	00000000 	.word	0x00000000
+ 128:	40080000 	.word	0x40080000
+ 12c:	00000000 	.word	0x00000000
+ 130:	40080000 	.word	0x40080000
+ 134:	00000000 	.word	0x00000000
+ 138:	40080000 	.word	0x40080000
+
+0000013c <Array_C>:
+	...
+
+00000184 <_start>:
+
+.text
+.globl _start
+_start:
+
+	ldr r0, =Array_C
+ 184:	e59f000c 	ldr	r0, [pc, #12]	; 198 <idle+0x4>
+	ldr r1, =Array_A
+ 188:	e59f100c 	ldr	r1, [pc, #12]	; 19c <idle+0x8>
+	ldr r2, =Array_B
+ 18c:	e59f200c 	ldr	r2, [pc, #12]	; 1a0 <idle+0xc>
+
+	bl mm
+ 190:	ebffff9a 	bl	0 <__cs3_interrupt_vector>
+
+00000194 <idle>:
+
+idle:
+	b idle
+ 194:	eafffffe 	b	194 <idle>
+ 198:	0000013c 	.word	0x0000013c
+ 19c:	000000ac 	.word	0x000000ac
+ 1a0:	000000f4 	.word	0x000000f4

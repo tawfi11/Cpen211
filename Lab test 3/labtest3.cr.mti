@@ -1,0 +1,8 @@
+{C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module q7
+
+Top level modules:
+	q7
+
+} {} {}}

@@ -1,0 +1,9 @@
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0
+.double 0.0

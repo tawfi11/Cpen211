@@ -1,0 +1,414 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/CPEN 211 LAB/Test
+vALU
+Z0 !s110 1570446574
+!i10b 1
+!s100 HK5P?GVSReV?^lZd?ZSE^3
+I]Xic1[m[WWcI9L3C5Q^dV1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/User/Desktop/drive-download-20191007T060358Z-001
+Z3 w1570427984
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1570446574.000000
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+n@a@l@u
+vALU_tb
+R0
+!i10b 1
+!s100 GX`g^783K4a3KVjc0637:0
+I3_ji`8k9OE]W7Fj]2gliY0
+R1
+R2
+R3
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu_tb.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/alu_tb.v|
+!i113 1
+R6
+R7
+n@a@l@u_tb
+vdatapath
+R0
+!i10b 1
+!s100 BdNU1S31:g>bI9YKMMCj@2
+I2ZXMiZ^NL4bMDH>TKcDlF1
+R1
+R2
+Z8 w1570436611
+Z9 8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath.v
+Z10 FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+Z11 !s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath.v|
+Z12 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath.v|
+!i113 1
+R6
+R7
+vdatapath_tb
+Z13 !s110 1570446575
+!i10b 1
+!s100 bU21;;82]Oa@]aAOfS]S`2
+I9DZeEBH]`3:IoLz[8^dQI1
+R1
+R2
+w1570444516
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath_tb.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z14 !s108 1570446575.000000
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/datapath_tb.v|
+!i113 1
+R6
+R7
+vDec
+R13
+!i10b 1
+!s100 d5P4^;JdMeI1j1JZj^J1;3
+IFhGm4jM<<c^Lf<B5JK]022
+R1
+R2
+Z15 w1570439832
+Z16 8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile.v
+Z17 FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile.v
+L0 30
+R4
+r1
+!s85 0
+31
+R14
+Z18 !s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile.v|
+!i113 1
+R6
+R7
+n@dec
+vinput_iface
+R13
+!i10b 1
+!s100 9=VLblSjgG9jVglRfIOhH2
+IQ0`<IjC0P49JJU^TUhdCf1
+R1
+R2
+Z20 w1570446567
+Z21 8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_top.v
+Z22 FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_top.v
+L0 109
+R4
+r1
+!s85 0
+31
+R14
+Z23 !s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_top.v|
+Z24 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_top.v|
+!i113 1
+R6
+R7
+vlab5_check_1
+R13
+!i10b 1
+!s100 gYdNCNW:ig>RgWSK2WRih1
+I_X]5hcLPOXl0>;DV2]N3O1
+R1
+R2
+Z25 w1570427986
+Z26 8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_autograder_check.v
+Z27 FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_autograder_check.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+Z28 !s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_autograder_check.v|
+Z29 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/lab5_autograder_check.v|
+!i113 1
+R6
+R7
+vlab5_check_2
+R13
+!i10b 1
+!s100 c[E<gH1gm<:Ek?zFeR3jE3
+I;Z=ACDc<D1K2m[][6@Wc[3
+R1
+R2
+R25
+R26
+R27
+L0 53
+R4
+r1
+!s85 0
+31
+R14
+R28
+R29
+!i113 1
+R6
+R7
+vlab5_check_3
+R13
+!i10b 1
+!s100 z;Tc50N>ZXLKg5O<H7>fK2
+IFj14N6FV_z_05W;]FN?lN2
+R1
+R2
+R25
+R26
+R27
+L0 129
+R4
+r1
+!s85 0
+31
+R14
+R28
+R29
+!i113 1
+R6
+R7
+vlab5_top
+R13
+!i10b 1
+!s100 AIV0M5ZV1AhcPcf@?HTFj3
+I@ANhMajZbl`OQ5IWa=SQm3
+R1
+R2
+R20
+R21
+R22
+L0 57
+R4
+r1
+!s85 0
+31
+R14
+R23
+R24
+!i113 1
+R6
+R7
+vmux2
+R0
+!i10b 1
+!s100 Z^Q<[MbU_on`ZWR7QQQ_^0
+IZ0F75`l7IoK^;O6QWUhAM0
+R1
+R2
+R8
+R9
+R10
+L0 45
+R4
+r1
+!s85 0
+31
+R5
+R11
+R12
+!i113 1
+R6
+R7
+vmux8
+R13
+!i10b 1
+!s100 a;oeY[]D5I;L@M:m`lNLU1
+I5<1Sc:IQ7?2KeA6;S]iRJ1
+R1
+R2
+R15
+R16
+R17
+L0 40
+R4
+r1
+!s85 0
+31
+R14
+R18
+R19
+!i113 1
+R6
+R7
+vregfile
+R13
+!i10b 1
+!s100 _PNH_^]_4V7Q1NYEI9L3V3
+I70<SAY:1Lza>fjQOdTVMX2
+R1
+R2
+R15
+R16
+R17
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+R18
+R19
+!i113 1
+R6
+R7
+vregfile_tb
+R13
+!i10b 1
+!s100 L0]T5>113MTnF<n_@XPoI2
+IKk2>cDa:m>F<d4mSaa`f[3
+R1
+R2
+w1570427982
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile_tb.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/regfile_tb.v|
+!i113 1
+R6
+R7
+vshifter
+!s110 1570446576
+!i10b 1
+!s100 9K8GSGYV4ao`K=iba>NiK2
+IO:bT:mzW5jH:nVDn1c6@D1
+R1
+R2
+R3
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter.v
+L0 1
+R4
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter.v|
+!i113 1
+R6
+R7
+vshifter_tb
+R0
+!i10b 1
+!s100 `;0HFm_ng?GA[Rf?DQGYH2
+IMDhzcheYR2A2?z2>X@:C_0
+R1
+R2
+R3
+8C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter_tb.v
+FC:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter_tb.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/User/Desktop/drive-download-20191007T060358Z-001/shifter_tb.v|
+!i113 1
+R6
+R7
+vsseg
+R13
+!i10b 1
+!s100 ;V6[K@=^Vja3I[b6@FMY83
+IeU;L337D]b6hF]3lV266X2
+R1
+R2
+R20
+R21
+R22
+L0 167
+R4
+r1
+!s85 0
+31
+R14
+R23
+R24
+!i113 1
+R6
+R7
+vvDFF
+R13
+!i10b 1
+!s100 @H=HKBFWk`NIEL2fGUK?B0
+ICl3QDj>04RcjioYiOJYEK0
+R1
+R2
+R20
+R21
+R22
+L0 148
+R4
+r1
+!s85 0
+31
+R14
+R23
+R24
+!i113 1
+R6
+R7
+nv@d@f@f
+vvDFFE
+R13
+!i10b 1
+!s100 ic;]V5^M@R9:d<RWA:5k52
+I]3]QoPLF4JRlaI7i6?>^R0
+R1
+R2
+R15
+R16
+R17
+L0 49
+R4
+r1
+!s85 0
+31
+R14
+R18
+R19
+!i113 1
+R6
+R7
+nv@d@f@f@e

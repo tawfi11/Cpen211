@@ -1,0 +1,15 @@
+To,Location
+A[0],PIN_AB12
+A[1],PIN_AC12
+A[2],PIN_AF9
+A[3],PIN_AF10
+B[0],PIN_AD11
+B[1],PIN_AD12
+B[2],PIN_AE11
+B[3],PIN_AC9
+not_LEFT_pushbutton,PIN_AA15
+not_RIGHT_pushbutton,PIN_AA14
+result[0],PIN_V16
+result[1],PIN_W16
+result[2],PIN_V17
+result[3],PIN_V18

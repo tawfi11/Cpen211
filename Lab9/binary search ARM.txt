@@ -1,0 +1,10 @@
+binary_search:
+	SUB r4, r3, r2 // endIndex - startIndex
+	MOV r4, r4 LSR#1 //(endIndex - startIndex)/2
+	ADD r4, r4, r3 //startIndex + (endIndex - startIndex)/2
+	CMP r2, r3 //if(startIndex > endIndex)
+	BLE if1
+	MOV r0, #-1 //return -1
+if1:
+	
+	

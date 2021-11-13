@@ -1,0 +1,1 @@
+Rituraj and Nusair shared the work evenly. They made the cpu, adjusted the datapath, and created the testbenches together. Credits go to TOR

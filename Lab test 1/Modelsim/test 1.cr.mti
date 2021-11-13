@@ -1,0 +1,79 @@
+{C:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab7_top
+-- Compiling module eq
+-- Compiling module triStateBuffer
+-- Compiling module RAM
+-- Compiling module vDFF
+-- Compiling module sseg
+
+Top level modules:
+	lab7_top
+	vDFF
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module cpu
+-- Compiling module Instruction_Dec
+-- Compiling module writeAndRead_Mux
+-- Compiling module FSM
+-- Compiling module h4_Mux
+
+Top level modules:
+	cpu
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module shifter
+
+Top level modules:
+	shifter
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab8_top
+-- Compiling module eq
+-- Compiling module triStateBuffer
+-- Compiling module RAM
+-- Compiling module vDFF
+-- Compiling module sseg
+
+Top level modules:
+	lab8_top
+	vDFF
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module lab8_check_tb
+
+Top level modules:
+	lab8_check_tb
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/alu.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/alu.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module ALU
+-- Compiling module xor3
+
+Top level modules:
+	ALU
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module regfile
+-- Compiling module Dec
+-- Compiling module vDFFE
+-- Compiling module registerMUX
+
+Top level modules:
+	regfile
+
+} {} {}} {C:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v} {1 {vlog -work work -stats=none {C:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module datapath
+-- Compiling module MUX
+-- Compiling module Four_IN_Mux
+
+Top level modules:
+	datapath
+
+} {} {}}

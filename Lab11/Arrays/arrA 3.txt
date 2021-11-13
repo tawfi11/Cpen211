@@ -1,0 +1,9 @@
+.double 1.001
+.double 1.002
+.double 1.003
+.double 2.001
+.double 2.002
+.double 2.003
+.double 3.001
+.double 3.002
+.double 3.003

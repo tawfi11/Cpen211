@@ -1,0 +1,1056 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vALU
+Z0 !s110 1572917765
+!i10b 1
+!s100 9eA:]ZP@1diV?FRj2dTHl3
+Ij?=H?1[4nnlF7AQoNfea:2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/nusai/Desktop/CPEN 211/Lab test 1/Modelsim
+Z3 w1572315868
+Z4 8C:/Users/nusai/Desktop/CPEN 211/lab8/alu.v
+Z5 FC:/Users/nusai/Desktop/CPEN 211/lab8/alu.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1572917765.000000
+Z8 !s107 C:/Users/nusai/Desktop/CPEN 211/lab8/alu.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/alu.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@a@l@u
+valu_tb
+!s110 1570420506
+!i10b 1
+!s100 lX4RdeiXKLTAL7W;b@MFU2
+IOPai8><L=[]=@NYCIjJ[g1
+R1
+R2
+w1570413424
+8C:/Users/nusai/Desktop/CPEN 211/Lab5/alu_tb.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab5/alu_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1570420506.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab5/alu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab5/alu_tb.v|
+!i113 1
+R10
+R11
+vALU_tb
+!s110 1570470001
+!i10b 1
+!s100 @Sf@miXWD6A=WGo0EZdYm1
+IIL@k`j=`EN>Mc9dFVfm_F1
+R1
+R2
+w1570469989
+8C:/Users/nusai/Desktop/Lab 5 edited/alu_tb.v
+FC:/Users/nusai/Desktop/Lab 5 edited/alu_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1570470001.000000
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/alu_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/alu_tb.v|
+!i113 1
+R10
+R11
+n@a@l@u_tb
+vcounter
+!s110 1572486172
+!i10b 1
+!s100 ljEbUlQeKW]VX;XggRhXn2
+I`fSk>BzRezhBjHId2c:Uc1
+R1
+R2
+w1572486167
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2.v
+L0 43
+R6
+r1
+!s85 0
+31
+!s108 1572486172.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2.v|
+!i113 1
+R10
+R11
+vcpu
+R0
+!i10b 1
+!s100 5?PDV0oN8eCY23FTkgBmX0
+IZMGke:Oa6=ZI:RQ6eSGG]1
+R1
+R2
+Z12 w1572916272
+Z13 8C:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v
+Z14 FC:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+Z15 !s107 C:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/cpu.v|
+!i113 1
+R10
+R11
+vdatapath
+R0
+!i10b 1
+!s100 :WG2P`4CAdOLDAe2BW;F72
+I6SA?Ueof_kZ@PVF:6[6T92
+R1
+R2
+R3
+Z17 8C:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v
+Z18 FC:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+Z19 !s107 C:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v|
+Z20 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/datapath.v|
+!i113 1
+R10
+R11
+vdatapath_tb
+Z21 !s110 1570467702
+!i10b 1
+!s100 bU21;;82]Oa@]aAOfS]S`2
+I83>PaNcijo0jjzY0V:h5W0
+R1
+R2
+w1570444516
+8C:/Users/nusai/Desktop/Lab 5 edited/datapath_tb.v
+FC:/Users/nusai/Desktop/Lab 5 edited/datapath_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+Z22 !s108 1570467702.000000
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/datapath_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/datapath_tb.v|
+!i113 1
+R10
+R11
+vDec
+R0
+!i10b 1
+!s100 bA4;oEDVidP6NhCVMWFOA2
+I]S2jTB^m`CIP387PZFlg;0
+R1
+R2
+R3
+Z23 8C:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v
+Z24 FC:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v
+L0 36
+R6
+r1
+!s85 0
+31
+R7
+Z25 !s107 C:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v|
+Z26 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/regfile.v|
+!i113 1
+R10
+R11
+n@dec
+vdetect_winner
+!s110 1570067148
+!i10b 1
+!s100 cFU1D@dl]cfz?;;43kDYJ2
+IIQUHCTOM]D0W2zijN9>lS3
+R1
+R2
+w1570067145
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q1.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 1/q1.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1570067148.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q1.v|
+!i113 1
+R10
+R11
+veq
+Z27 !s110 1572917766
+!i10b 1
+!s100 zSGXn5zcOQE2W6Po1k8ck2
+I17EcdXmFnblaF;j>T=IRE3
+R1
+R2
+Z28 w1572915242
+Z29 8C:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v
+Z30 FC:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v
+L0 66
+R6
+r1
+!s85 0
+31
+Z31 !s108 1572917766.000000
+Z32 !s107 C:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v|
+Z33 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/lab7_top.v|
+!i113 1
+R10
+R11
+vEqComp
+Z34 !s110 1572140372
+!i10b 1
+!s100 P?flFUUo1X8U7M_hO5lAC1
+IM7azR1`GbkmI`B0JHLEhX2
+R1
+R2
+Z35 w1572140368
+Z36 8C:/Users/nusai/Desktop/CPEN 211/Lab7/RAM.v
+Z37 FC:/Users/nusai/Desktop/CPEN 211/Lab7/RAM.v
+L0 37
+R6
+r1
+!s85 0
+31
+Z38 !s108 1572140371.000000
+Z39 !s107 C:/Users/nusai/Desktop/CPEN 211/Lab7/RAM.v|
+Z40 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab7/RAM.v|
+!i113 1
+R10
+R11
+n@eq@comp
+vextra_shit
+R34
+!i10b 1
+!s100 >=z`V]F<Ok2nZV]_oVjKG1
+IlmK45JQXzASBXT7^hN:I53
+R1
+R2
+R35
+R36
+R37
+Z41 L0 53
+R6
+r1
+!s85 0
+31
+R38
+R39
+R40
+!i113 1
+R10
+R11
+vFour_IN_Mux
+R27
+!i10b 1
+!s100 AjUH>;TmZm3nJmY;zC:5E1
+I`>`_l<QKA6]GP@;lc[LeH3
+R1
+R2
+R3
+R17
+R18
+Z42 L0 60
+R6
+r1
+!s85 0
+31
+R7
+R19
+R20
+!i113 1
+R10
+R11
+n@four_@i@n_@mux
+vFSM
+R0
+!i10b 1
+!s100 b^i6f>H[^Z46RSefWgPaU2
+Ie64:I9QD;zKmU_I0dzk743
+R1
+R2
+R12
+R13
+R14
+L0 121
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+n@f@s@m
+vfun
+Z43 !s110 1572497089
+!i10b 1
+!s100 Yj>aF4fYkNb[]fY;E3S4b2
+I>D26FzkkcVci0gcPaQ^hY2
+R1
+R2
+Z44 w1572497078
+Z45 8C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q2.v
+Z46 FC:\Users\nusai\Desktop\CPEN 211\Lab test 2\q2.v
+L0 6
+R6
+r1
+!s85 0
+31
+Z47 !s108 1572497089.000000
+Z48 !s107 C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q2.v|
+Z49 !s90 -reportprogress|300|-work|work|-stats=none|C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q2.v|
+!i113 1
+R10
+R11
+vfun_tb
+R43
+!i10b 1
+!s100 8A4GlUAXc2n7>fH>IQSi40
+IBklHzeje;faPkaC8CkmzM0
+R1
+R2
+R44
+R45
+R46
+L0 154
+R6
+r1
+!s85 0
+31
+R47
+R48
+R49
+!i113 1
+R10
+R11
+vh4_Mux
+R0
+!i10b 1
+!s100 7AnWoBdeBg_@gWH:>H?AD1
+Im>ZB4K8[7gV>@AU]Qn?U<3
+R1
+R2
+R12
+R13
+R14
+L0 424
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+nh4_@mux
+vh4Mux
+!s110 1572913009
+!i10b 1
+!s100 3D9b1c@ZjS7OdVT3Z4h4n2
+IIV@=IcRkf4b?114gSHPVe1
+R1
+R2
+w1572911207
+8C:/Users/nusai/Desktop/CPEN 211/Lab8/cpu.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab8/cpu.v
+L0 421
+R6
+r1
+!s85 0
+31
+!s108 1572913009.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab8/cpu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab8/cpu.v|
+!i113 1
+R10
+R11
+nh4@mux
+vinput_iface
+Z50 !s110 1570467703
+!i10b 1
+!s100 9=VLblSjgG9jVglRfIOhH2
+IKaODZZzRHFLd;:C^[Fdz31
+R1
+R2
+Z51 w1570446567
+Z52 8C:/Users/nusai/Desktop/Lab 5 edited/lab5_top.v
+Z53 FC:/Users/nusai/Desktop/Lab 5 edited/lab5_top.v
+L0 109
+R6
+r1
+!s85 0
+31
+R22
+Z54 !s107 C:/Users/nusai/Desktop/Lab 5 edited/lab5_top.v|
+Z55 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/lab5_top.v|
+!i113 1
+R10
+R11
+vInstruction_Dec
+R0
+!i10b 1
+!s100 YYU;9EKbonhi8IA=BFQ^@3
+Il:9zFAi6N>Dj??EPAj@jf2
+R1
+R2
+R12
+R13
+R14
+R42
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+n@instruction_@dec
+vlab5_check_1
+R21
+!i10b 1
+!s100 gYdNCNW:ig>RgWSK2WRih1
+I9ca:QVQe[aTzH122nZkn?3
+R1
+R2
+Z56 w1570427986
+Z57 8C:/Users/nusai/Desktop/Lab 5 edited/lab5_autograder_check.v
+Z58 FC:/Users/nusai/Desktop/Lab 5 edited/lab5_autograder_check.v
+L0 1
+R6
+r1
+!s85 0
+31
+R22
+Z59 !s107 C:/Users/nusai/Desktop/Lab 5 edited/lab5_autograder_check.v|
+Z60 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/lab5_autograder_check.v|
+!i113 1
+R10
+R11
+vlab5_check_2
+R21
+!i10b 1
+!s100 c[E<gH1gm<:Ek?zFeR3jE3
+IaFcC2ZLUjl9Nd]=d_B^EP2
+R1
+R2
+R56
+R57
+R58
+R41
+R6
+r1
+!s85 0
+31
+R22
+R59
+R60
+!i113 1
+R10
+R11
+vlab5_check_3
+R21
+!i10b 1
+!s100 z;Tc50N>ZXLKg5O<H7>fK2
+InD8QZ?jU=DDQYN8f^WUDY2
+R1
+R2
+R56
+R57
+R58
+L0 129
+R6
+r1
+!s85 0
+31
+R22
+R59
+R60
+!i113 1
+R10
+R11
+vlab5_top
+R50
+!i10b 1
+!s100 AIV0M5ZV1AhcPcf@?HTFj3
+I?YCXXhcC0b9kFGX[U5Kf43
+R1
+R2
+R51
+R52
+R53
+L0 57
+R6
+r1
+!s85 0
+31
+R22
+R54
+R55
+!i113 1
+R10
+R11
+vlab7_top
+R27
+!i10b 1
+!s100 d<1z0JP3f9Ek4QFh9l0`N1
+Id7=>e1k0Q4DaQe;:_Hm6C3
+R1
+R2
+R28
+R29
+R30
+L0 4
+R6
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R10
+R11
+vlab8_check_tb
+R0
+!i10b 1
+!s100 f7SHIXQSI1il1L?::d=1L3
+I8ZLfGRLH?O;Co6<cL_52H0
+R1
+R2
+w1572826196
+8C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v
+FC:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_autograder_check.v|
+!i113 1
+R10
+R11
+vlab8_stage2_tb
+!s110 1572916788
+!i10b 1
+!s100 3ZPbfjMmSPM6eeRn?A:[H2
+IPH<XdjM6EfN9aK1EWijAe0
+R1
+R2
+w1572914404
+8C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_stage2_tb.v
+FC:/Users/nusai/Desktop/CPEN 211/lab8/lab8_stage2_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1572916788.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_stage2_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_stage2_tb.v|
+!i113 1
+R10
+R11
+vlab8_top
+R0
+!i10b 1
+!s100 oW]0::LGffPPhn1BWCf3;1
+IL?A3^L:@8zPX6Wi;LiNK?1
+R1
+R2
+w1572912162
+8C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v
+FC:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v
+L0 4
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/lab8_top.v|
+!i113 1
+R10
+R11
+vMUX
+R0
+!i10b 1
+!s100 Abn?]3Z1ZlmSYlaR^NlZ53
+IV3`QHS?7;S1FA`<2NYIJ:1
+R1
+R2
+R3
+R17
+R18
+L0 50
+R6
+r1
+!s85 0
+31
+R7
+R19
+R20
+!i113 1
+R10
+R11
+n@m@u@x
+vmux
+!s110 1570419516
+!i10b 1
+!s100 G7PKJPTSG^kBg]Ri748jR3
+IeO9jG>Zme3U6M^3Lom<N_1
+R1
+R2
+w1570410265
+8C:\Users\nusai\Desktop\CPEN 211\Lab5\regfile.v
+FC:\Users\nusai\Desktop\CPEN 211\Lab5\regfile.v
+Z61 L0 40
+R6
+r1
+!s85 0
+31
+!s108 1570419516.000000
+!s107 C:\Users\nusai\Desktop\CPEN 211\Lab5\regfile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\nusai\Desktop\CPEN 211\Lab5\regfile.v|
+!i113 1
+R10
+R11
+vmux2
+R21
+!i10b 1
+!s100 Z^Q<[MbU_on`ZWR7QQQ_^0
+I]4A9JikA1L82;Z2FD0GcE3
+R1
+R2
+w1570467592
+8C:/Users/nusai/Desktop/Lab 5 edited/datapath.v
+FC:/Users/nusai/Desktop/Lab 5 edited/datapath.v
+L0 45
+R6
+r1
+!s85 0
+31
+R22
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/datapath.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/datapath.v|
+!i113 1
+R10
+R11
+vmux8
+R50
+!i10b 1
+!s100 a;oeY[]D5I;L@M:m`lNLU1
+IOMSc<l6I5b3Z8S[MRFH9N3
+R1
+R2
+w1570439832
+8C:/Users/nusai/Desktop/Lab 5 edited/regfile.v
+FC:/Users/nusai/Desktop/Lab 5 edited/regfile.v
+R61
+R6
+r1
+!s85 0
+31
+Z62 !s108 1570467703.000000
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/regfile.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/regfile.v|
+!i113 1
+R10
+R11
+vq1_tb
+!s110 1572482507
+!i10b 1
+!s100 8M0KjC>>o=2HcKGOHzNIF1
+Io=_EPAe;@Sj:1PJ=J5e7N1
+R1
+R2
+w1572482502
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q1_tb.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 2/q1_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1572482507.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q1_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q1_tb.v|
+!i113 1
+R10
+R11
+vq2_check_tb
+!s110 1572485361
+!i10b 1
+!s100 RaJzcCWFeDLiMWV^@:JlR0
+I4OQgQ2G9:7F1G;cGnZhf22
+R1
+R2
+w1572405255
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2_check_tb.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2_check_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1572485361.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2_check_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 2/q2_check_tb.v|
+!i113 1
+R10
+R11
+vq2_tb
+!s110 1570066648
+!i10b 1
+!s100 Jj^Oe@EIdL`:WLz^LhfL_3
+IBBJS=gLEB3Sh]RJD?^I=30
+R1
+R2
+w1570066635
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q2.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 1/q2.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1570066647.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 1/q2.v|
+!i113 1
+R10
+R11
+vRAM
+R27
+!i10b 1
+!s100 In<V<=CAW_C<I;SP;81CN0
+If7g=`2li;S?alk[bW0;4T2
+R1
+R2
+R28
+R29
+R30
+L0 82
+R6
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R10
+R11
+n@r@a@m
+vregfile
+R0
+!i10b 1
+!s100 PICzA6g6af<L0I[__HUA]3
+IH]_XZK^lcOlmLBSg3KQ6Q0
+R1
+R2
+R3
+R23
+R24
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R25
+R26
+!i113 1
+R10
+R11
+vregfile_tb
+R50
+!i10b 1
+!s100 L0]T5>113MTnF<n_@XPoI2
+Im^KUzd5>=GC:Ld=COZmO72
+R1
+R2
+w1570427982
+8C:/Users/nusai/Desktop/Lab 5 edited/regfile_tb.v
+FC:/Users/nusai/Desktop/Lab 5 edited/regfile_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+R62
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/regfile_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/regfile_tb.v|
+!i113 1
+R10
+R11
+vregisterMUX
+R0
+!i10b 1
+!s100 G_cBaKfO4cKTE7oC886[b1
+I:=k4KfQQCZT8dHMJ56IYQ3
+R1
+R2
+R3
+R23
+R24
+L0 62
+R6
+r1
+!s85 0
+31
+R7
+R25
+R26
+!i113 1
+R10
+R11
+nregister@m@u@x
+vshifter
+R0
+!i10b 1
+!s100 7:a;Wj?22WWo3^607i7SA1
+I[XlC;_Qg^:2?cR9VJI^>M3
+R1
+R2
+R3
+8C:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v
+FC:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/lab8/shifter.v|
+!i113 1
+R10
+R11
+vshifter_tb
+R50
+!i10b 1
+!s100 `;0HFm_ng?GA[Rf?DQGYH2
+IRQk:BUcJ]GI2m`1aM5gR:2
+R1
+R2
+w1570427984
+8C:/Users/nusai/Desktop/Lab 5 edited/shifter_tb.v
+FC:/Users/nusai/Desktop/Lab 5 edited/shifter_tb.v
+L0 1
+R6
+r1
+!s85 0
+31
+R62
+!s107 C:/Users/nusai/Desktop/Lab 5 edited/shifter_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/Lab 5 edited/shifter_tb.v|
+!i113 1
+R10
+R11
+vsseg
+R27
+!i10b 1
+!s100 ;^PBeRJ^ndkDb<ceiG^La3
+I<n0bhN_j;?JGW_JWIE33?1
+R1
+R2
+R28
+R29
+R30
+L0 134
+R6
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R10
+R11
+vtop_module
+!s110 1572485335
+!i10b 1
+!s100 LTaR7n>1=1GW;SPUzRkBV3
+IY?ji6?nm1eeCJnMeb_UZU3
+R1
+R2
+w1572482810
+8C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q1.v
+FC:\Users\nusai\Desktop\CPEN 211\Lab test 2\q1.v
+L0 6
+R6
+r1
+!s85 0
+31
+!s108 1572485335.000000
+!s107 C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\Users\nusai\Desktop\CPEN 211\Lab test 2\q1.v|
+!i113 1
+R10
+R11
+vtriStateBuffer
+R27
+!i10b 1
+!s100 bUTj?e9jj9V8EB4WBg_b`3
+I``^WVM<2Hn27Ecol[ff7T0
+R1
+R2
+R28
+R29
+R30
+L0 73
+R6
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R10
+R11
+ntri@state@buffer
+vTriStateDriver
+R34
+!i10b 1
+!s100 DhHdH`U=KC^F_=[K92?LC1
+IAMi>C_ibVlfPRAY:INlaJ3
+R1
+R2
+R35
+R36
+R37
+L0 46
+R6
+r1
+!s85 0
+31
+R38
+R39
+R40
+!i113 1
+R10
+R11
+n@tri@state@driver
+vvDFF
+R27
+!i10b 1
+!s100 Rcf^^Y?7JB@]4S7L3NR2A2
+Ic^bkA?kge]gEP6KcGOeG12
+R1
+R2
+R28
+R29
+R30
+L0 117
+R6
+r1
+!s85 0
+31
+R31
+R32
+R33
+!i113 1
+R10
+R11
+nv@d@f@f
+vvDFFE
+R0
+!i10b 1
+!s100 >9b`fzl?JE4cYFHmF2Oi[2
+IfHG81QLlI;eWAhmW1XnLL2
+R1
+R2
+R3
+R23
+R24
+L0 47
+R6
+r1
+!s85 0
+31
+R7
+R25
+R26
+!i113 1
+R10
+R11
+nv@d@f@f@e
+vwriteAndRead_Mux
+R0
+!i10b 1
+!s100 >=Pd;=e?0T:gec>lHKMDh2
+IGbE:J_HGgLROP`Iie:?N:1
+R1
+R2
+R12
+R13
+R14
+L0 100
+R6
+r1
+!s85 0
+31
+R7
+R15
+R16
+!i113 1
+R10
+R11
+nwrite@and@read_@mux
+vxor3
+R0
+!i10b 1
+!s100 YJF6YE9MONMz?C[c7V:]>1
+IWnLKWaaJNh>EYQ@h1A?7=0
+R1
+R2
+R3
+R4
+R5
+L0 68
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

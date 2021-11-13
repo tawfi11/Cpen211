@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.1
+vlab1_top
+Z0 !s110 1568151729
+!i10b 1
+!s100 6_jA9Em>:78N?MLEz8KOd2
+IiNO3f>Q7ibY@k;dB]TAQL1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1
+w1568146725
+8C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top.v
+FC:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1568151729.000000
+!s107 C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vlab1_top_tb
+R0
+!i10b 1
+!s100 XVVFT6HSJQob8]aWXe<mJ1
+I@Z<K;SdR3V2M033fXeS`12
+R1
+R2
+w1568141333
+8C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top_tb.v
+FC:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top_tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/2nd Year/CPEN 211/Lab 1/lab1_top_tb.v|
+!i113 1
+R5
+R6

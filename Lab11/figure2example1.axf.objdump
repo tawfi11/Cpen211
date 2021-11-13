@@ -1,0 +1,213 @@
+
+C:/Users/nusai/Desktop/Lab11/figure2example1.axf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <__cs3_interrupt_vector>:
+.text
+.global _start
+_start:
+    BL CONFIG_VIRTUAL_MEMORY
+   0:	eb000019 	bl	6c <CONFIG_VIRTUAL_MEMORY>
+// Step 1-3: configure PMN0 to count cycles
+    MOV R0, #0 // Write 0 into R0 then PMSELR
+   4:	e3a00000 	mov	r0, #0
+    MCR p15, 0, R0, c9, c12, 5 // Write 0 into PMSELR selects PMN0
+   8:	ee090fbc 	mcr	15, 0, r0, cr9, cr12, {5}
+    MOV R1, #0x11 // Event 0x11 is CPU cycles
+   c:	e3a01011 	mov	r1, #17
+    MCR p15, 0, R1, c9, c13, 1 // Write 0x11 into PMXEVTYPER (PMN0 measure CPU cycles)
+  10:	ee091f3d 	mcr	15, 0, r1, cr9, cr13, {1}
+// Step 4: enable PMN0
+    mov R0, #1 // PMN0 is bit 0 of PMCNTENSET
+  14:	e3a00001 	mov	r0, #1
+    MCR p15, 0, R0, c9, c12, 1 // Setting bit 0 of PMCNTENSET enables PMN0
+  18:	ee090f3c 	mcr	15, 0, r0, cr9, cr12, {1}
+// Step 5: clear all counters and start counters
+    mov r0, #3 // bits 0 (start counters) and 1 (reset counters)
+  1c:	e3a00003 	mov	r0, #3
+    MCR p15, 0, r0, c9, c12, 0 // Setting PMCR to 3
+  20:	ee090f1c 	mcr	15, 0, r0, cr9, cr12, {0}
+// Step 6: code we wish to profile using hardware counters
+    mov r1, #0x00100000 // base of array
+  24:	e3a01601 	mov	r1, #1048576	; 0x100000
+    mov r2, #0x100 // iterations of inner loop
+  28:	e3a02c01 	mov	r2, #256	; 0x100
+    mov r3, #2 // iterations of outer loop
+  2c:	e3a03002 	mov	r3, #2
+    mov r4, #0 // i=0 (outer loop counter)
+  30:	e3a04000 	mov	r4, #0
+
+00000034 <L_outer_loop>:
+L_outer_loop:
+    mov r5, #0 // j=0 (inner loop counter)
+  34:	e3a05000 	mov	r5, #0
+
+00000038 <L_inner_loop>:
+L_inner_loop:
+    ldr r6, [r1, r5, LSL #2] // read data from memory
+  38:	e7916105 	ldr	r6, [r1, r5, lsl #2]
+    add r5, r5, #1 // j=j+1
+  3c:	e2855001 	add	r5, r5, #1
+    cmp r5, r2 // compare j with 256
+  40:	e1550002 	cmp	r5, r2
+    blt L_inner_loop // branch if less than
+  44:	bafffffb 	blt	38 <L_inner_loop>
+    add r4, r4, #1 // i=i+1
+  48:	e2844001 	add	r4, r4, #1
+    cmp r4, r3 // compare i with 2
+  4c:	e1540003 	cmp	r4, r3
+    blt L_outer_loop // branch if less than
+  50:	bafffff7 	blt	34 <L_outer_loop>
+// Step 7: stop counters
+    mov r0, #0
+  54:	e3a00000 	mov	r0, #0
+    MCR p15, 0, r0, c9, c12, 0 // Write 0 to PMCR to stop counters
+  58:	ee090f1c 	mcr	15, 0, r0, cr9, cr12, {0}
+// Step 8-10: Select PMN0 and read out result into R3
+    mov r0, #0 // PMN0
+  5c:	e3a00000 	mov	r0, #0
+    MCR p15, 0, R0, c9, c12, 5 // Write 0 to PMSELR
+  60:	ee090fbc 	mcr	15, 0, r0, cr9, cr12, {5}
+    MRC p15, 0, R3, c9, c13, 2 // Read PMXEVCNTR into R3
+  64:	ee193f5d 	mrc	15, 0, r3, cr9, cr13, {2}
+
+00000068 <end>:
+end: b end // wait here
+  68:	eafffffe 	b	68 <end>
+
+0000006c <CONFIG_VIRTUAL_MEMORY>:
+      .equ  TRANS_TABLE_N, 0
+      .equ  SECTION_SIZE, 0x100000
+
+      .global CONFIG_VIRTUAL_MEMORY
+CONFIG_VIRTUAL_MEMORY:
+      PUSH {R4-R9}
+  6c:	e92d03f0 	push	{r4, r5, r6, r7, r8, r9}
+
+      /* Verify System Control Register contents */
+      MRC p15, 0, R0, c1, c0, 0 /* Read SCTLR into Rt */
+  70:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
+      LDR R1, =0x00C5187A
+  74:	e59f10a8 	ldr	r1, [pc, #168]	; 124 <CPT_RETURN+0x8>
+      CMP R0, R1
+  78:	e1500001 	cmp	r0, r1
+      BNE CPT_ERROR
+  7c:	1a000025 	bne	118 <CPT_ERROR>
+
+      LDR R6, =0x100000 /* address to try to read after MMU configured */
+  80:	e3a06601 	mov	r6, #1048576	; 0x100000
+      LDR R7, [R6]      /* R7 is contents of word at physical address 0x100000 */
+  84:	e5967000 	ldr	r7, [r6]
+      LDR R8, =0x200000 /* address to try to read after MMU configured */
+  88:	e3a08602 	mov	r8, #2097152	; 0x200000
+      LDR R9, [R8]      /* R9 has contents of word at physical address 0x200000 */
+  8c:	e5989000 	ldr	r9, [r8]
+
+      /* initialize level 1 translation table */
+               /*1111111111          */
+               /*98765432109876543210*/
+      LDR R1, =0b10000001110000001110    /* lower 20 bits of section descriptor for cacheable sections */
+  90:	e59f1090 	ldr	r1, [pc, #144]	; 128 <CPT_RETURN+0xc>
+      LDR R2, =0b10000000110000000010    /* lower 20 bits of section descriptor for device sections */
+  94:	e59f2090 	ldr	r2, [pc, #144]	; 12c <CPT_RETURN+0x10>
+      LDR R3, =SECTION_SIZE
+  98:	e3a03601 	mov	r3, #1048576	; 0x100000
+      LDR R4, =TRANS_TABLE_0_BASE
+  9c:	e3a04201 	mov	r4, #268435456	; 0x10000000
+      MOV R0, #0  /* loop counter */
+  a0:	e3a00000 	mov	r0, #0
+
+000000a4 <CPT_L1>:
+CPT_L1: 
+      MUL   R5, R0, R3                     /* physical address of section */
+  a4:	e0050390 	mul	r5, r0, r3
+      CMP   R0, #UNCACHABLE_START 
+  a8:	e3500b01 	cmp	r0, #1024	; 0x400
+      ORRLT R5, R5, R1
+  ac:	b1855001 	orrlt	r5, r5, r1
+      ORRGE R5, R5, R2
+  b0:	a1855002 	orrge	r5, r5, r2
+      STR   R5, [R4, R0, LSL #2]
+  b4:	e7845100 	str	r5, [r4, r0, lsl #2]
+      ADD   R0, R0, #1
+  b8:	e2800001 	add	r0, r0, #1
+      CMP   R0, #0x1000
+  bc:	e3500a01 	cmp	r0, #4096	; 0x1000
+      BLT   CPT_L1
+  c0:	bafffff7 	blt	a4 <CPT_L1>
+
+      /* for testing address translation: remap second two pages */
+      ADD R5, R1, R3
+  c4:	e0815003 	add	r5, r1, r3
+      STR R5, [R4, #8]  /* virtual page 2 => physical page 1 */
+  c8:	e5845008 	str	r5, [r4, #8]
+      ADD R5, R1, R3, LSL #1
+  cc:	e0815083 	add	r5, r1, r3, lsl #1
+      STR R5, [R4, #4]  /* virtual page 1 => physical page 2 */
+  d0:	e5845004 	str	r5, [r4, #4]
+
+      /* set Translation Table Base Control Register */
+      MOV R0, #TRANS_TABLE_N
+  d4:	e3a00000 	mov	r0, #0
+      MCR p15, 0, R0, c2, c0, 2 /* TTBCR.N = 0 */
+  d8:	ee020f50 	mcr	15, 0, r0, cr2, cr0, {2}
+
+      /* set Translation Table Base Register 0 */
+      LDR R0,=TRANS_TABLE_0_BASE 
+  dc:	e3a00201 	mov	r0, #268435456	; 0x10000000
+      MCR p15, 0, R0, c2, c0, 0 /* TTBR0 = TRANS_TABLE_0_BASE */
+  e0:	ee020f10 	mcr	15, 0, r0, cr2, cr0, {0}
+
+      /* set Domain Access Control Register */
+      MOV R0, #1
+  e4:	e3a00001 	mov	r0, #1
+      MCR p15, 0, R0, c3, c0, 0 /* Domain 0 is client */
+  e8:	ee030f10 	mcr	15, 0, r0, cr3, cr0, {0}
+
+      /* set Context ID Register */
+      MOV R0, #0
+  ec:	e3a00000 	mov	r0, #0
+      MCR p15, 0, R0, c13, c0, 1 /* PROCID = 0, ACID = 0 */
+  f0:	ee0d0f30 	mcr	15, 0, r0, cr13, cr0, {1}
+
+      /* enable data cache and MMU */
+      MRC p15, 0, R0, c1, c0, 0 /* Read SCTLR into Rt */
+  f4:	ee110f10 	mrc	15, 0, r0, cr1, cr0, {0}
+      ORR R0, R0, #0b101
+  f8:	e3800005 	orr	r0, r0, #5
+      MCR p15, 0, R0, c1, c0, 0 /* Write Rt to SCTLR */ 
+  fc:	ee010f10 	mcr	15, 0, r0, cr1, cr0, {0}
+
+      ISB
+ 100:	f57ff06f 	isb	sy
+
+      LDR   R1, [R6] /* R1 has contents of memory at virtual address 0x100000 
+ 104:	e5961000 	ldr	r1, [r6]
+                        which should be physical address 0x200000 */
+
+      CMP   R1, R9   /* R1 should match R9 if address translation worked */
+ 108:	e1510009 	cmp	r1, r9
+      BNE   CPT_ERROR 
+ 10c:	1a000001 	bne	118 <CPT_ERROR>
+
+      MOV   R0, #0
+ 110:	e3a00000 	mov	r0, #0
+      B     CPT_RETURN
+ 114:	ea000000 	b	11c <CPT_RETURN>
+
+00000118 <CPT_ERROR>:
+CPT_ERROR:
+      MOV   R0, #1
+ 118:	e3a00001 	mov	r0, #1
+
+0000011c <CPT_RETURN>:
+CPT_RETURN:
+      POP   {R4-R9}
+ 11c:	e8bd03f0 	pop	{r4, r5, r6, r7, r8, r9}
+      BX    LR
+ 120:	e12fff1e 	bx	lr
+ 124:	00c5187a 	.word	0x00c5187a
+ 128:	00081c0e 	.word	0x00081c0e
+ 12c:	00080c02 	.word	0x00080c02

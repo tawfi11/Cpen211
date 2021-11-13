@@ -1,0 +1,26 @@
+module datapath(clk, readnum, vsel, loada, loadb, shift, asel, bsel, ALUop, loadc, loads, writenum, write, datapath_in, Z_out, datapath_out);
+	input clk; 
+	input [2:0] readnum; 
+	input vsel; 
+	input loada;
+	input loadb; 
+	input [1:0]shift; 
+	input asel, bsel; 
+	input [1:0] ALUop; 
+	input loadc, loads; 
+	input [2:0] writenum; 
+	input write; 
+	input [15:0] datapath_in;
+	input Z_out;
+	output [15:0] datapath_out;
+	
+
+endmodule 
+
+module mux2(a1, a0, s, b);
+	parameter k = 1;
+	input [k-1:0] a0, a1;
+	input s;
+	output [k-1:0] b;
+	wire [k-1:0] b = ({k{s}} & a0) | ({k{s}} & a1);
+endmodule;

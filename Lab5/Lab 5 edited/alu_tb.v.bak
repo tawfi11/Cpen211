@@ -1,0 +1,28 @@
+module alu_tb();
+	reg [15:0] Ain, Bin;
+	reg[1:0] ALUop;
+	wire [15:0] out;
+	wire Z;
+	
+	ALU dut (Ain,Bin,ALUop,out,Z);
+	
+	initial begin
+		ALUop = 2'b00;
+		Ain = 16'd101;
+		Bin = 16'd100;
+		
+		#5;
+		
+		ALUop = 2'b01;
+		
+		#5;
+	
+		ALUop = 2'b10;
+		
+		#5;
+		
+		ALUop = 2'b11;
+		$stop;
+	end
+	
+endmodule

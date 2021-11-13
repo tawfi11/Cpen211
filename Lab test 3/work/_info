@@ -1,0 +1,138 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/nusai/Desktop/CPEN 211/Lab test 3 2018
+vq1_tb
+Z0 !s110 1573699792
+!i10b 1
+!s100 RViU_H9LTMh@Ng]RT;4Zc0
+IZYDd9Y>?8TKMnH:0HmK;P3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/nusai/Desktop/CPEN 211/Lab test 3
+w1573697710
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1tb.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1tb.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1573699792.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1tb.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vq7
+!s110 1575847262
+!i10b 1
+!s100 YCG[e@i`dNVH1ZXo5OE1;1
+IOaC^zZ89E]b[_6J;We<8h0
+R1
+R2
+w1575847256
+Z7 8C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v
+Z8 FC:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v
+L0 1
+R3
+r1
+!s85 0
+31
+!s108 1575847262.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v|
+!i113 1
+R5
+R6
+vRAM1P
+R0
+!i10b 1
+!s100 1@Lbj@9bZ6=aC6=n2UOJ41
+ICYNiVfg28lhfUgaCLb91R2
+R1
+R2
+w1573510334
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 3/mem.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 3/mem.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 3/mem.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 3/mem.v|
+!i113 1
+R5
+R6
+n@r@a@m1@p
+vtb
+R0
+!i10b 1
+!s100 l>?_gn3KoK9?3n]IA7IbN0
+IU7<dj7TIUc0<JW2:OL_hI2
+R1
+R2
+w1573697552
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 3/tb.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 3/tb.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 3/tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 3/tb.v|
+!i113 1
+R5
+R6
+vtop_module
+R0
+!i10b 1
+!s100 GQY`8oAS475Z>M7Z[F:If2
+I^P6KXH5?6ni>cM<_^9m>f0
+R1
+R2
+w1573699786
+8C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1.v
+FC:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1.v
+L0 23
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/nusai/Desktop/CPEN 211/Lab test 3/q1.v|
+!i113 1
+R5
+R6
+vvDFF
+!s110 1575780732
+!i10b 1
+!s100 iU=S4`<VS^F5`3CIB0fhP3
+IZF:8zb=P^ETRV_L9DCTo:3
+R1
+R2
+w1575780728
+R7
+R8
+L0 16
+R3
+r1
+!s85 0
+31
+!s108 1575780732.000000
+!s107 C:/Users/nusai/Desktop/CPEN 211/Final Practice/ProblemSet2Q7.v|
+R9
+!i113 1
+R5
+R6
+nv@d@f@f

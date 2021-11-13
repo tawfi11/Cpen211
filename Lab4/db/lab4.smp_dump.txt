@@ -1,0 +1,8 @@
+
+State Machine - |lab4_top|present_state
+Name present_state.0000000 present_state.1000000 present_state.0110000 present_state.0010010 present_state.0011001 
+present_state.0000000 0 0 0 0 0 
+present_state.0010010 1 0 0 1 0 
+present_state.0011001 1 0 0 0 1 
+present_state.0110000 1 0 1 0 0 
+present_state.1000000 1 1 0 0 0 

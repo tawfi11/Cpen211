@@ -1,0 +1,96 @@
+`define s1 7'b0011001
+`define s2 7'b1000000
+`define s3 7'b0110000
+`define s4 7'b0000000
+`define s5 7'b0010010
+
+module lab4_top(SW,KEY,HEX0);
+  input [9:0] SW;
+  input [3:0] KEY;
+  output [6:0] HEX0;
+  
+  reg [6:0] HEX0;
+  
+  reg [6:0] present_state;
+  
+  always @(negedge KEY[0]) begin
+		if (KEY[1] == 0) begin
+			present_state = `s1;
+		end else begin
+			case(present_state)
+				if(SW[1] == 1) begin
+					`s1: present_state = `s2;
+					`s2: present_state = `s3;
+					`s3: present_state = `s4;
+					`s4: present_state = `s5;
+					`s5: present_state = `s1;
+				end
+				if(SW[1] == 0) begin
+					`s5: present_state = `s4;
+					`s4: present_state = `s3;
+					`s3: present_state = `s2;
+					`s2: present_state = `s1;
+					`s1: present_state = `s5;
+				end
+				default: present_state = 7'bxxxxxxx;
+			endcase
+		end
+		HEX0 = present_state;
+	end
+  
+endmodule
+
+module lab4_tb();
+  reg [9:0] SW ;
+  reg [3:0] KEY ;
+  wire [6:0] HEX0 ;
+	
+	lab4_top dut (SW, KEY, HEX0);
+	
+	initial begin
+	
+		//initial values
+		KEY = 4'b1111;
+		#10;
+		
+		//First state
+		KEY[1] = 1'b0;
+		#5
+		KEY[0] = 1'b0;
+		#5
+		KEY[1] = 1'b1;
+		KEY[0] = 1'b1;
+		#10;
+		
+		//Second state
+		KEY[0] = 1'b0;
+		#5
+		KEY[0] = 1'b1;
+		#10
+		
+		//Third state
+		KEY[0] = 1'b0;
+		#5;
+		KEY[0] = 1'b1;
+		#10;
+		
+		//Fourth stage
+		KEY[0] = 1'b0;
+		#5;
+		KEY[0] = 1'b1;
+		#10;
+		
+		//Fifth stage
+		KEY[0] = 1'b0;
+		#5;
+		KEY[0] = 1'b1;
+		#10;
+		
+		//Back to first stage
+		KEY[0] = 1'b0;
+		#5;
+		KEY[0] = 1'b1;
+		#10;
+		$stop;
+	end
+endmodule

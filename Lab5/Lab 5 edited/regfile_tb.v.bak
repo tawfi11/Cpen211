@@ -1,0 +1,39 @@
+module regfile_tb();
+	reg [15:0] data_in;
+	reg [2:0] writenum, readnum;
+	reg write, clk;
+	wire [15:0] data_out;
+	
+	regfile dut (data_in,writenum,write,readnum,clk,data_out);
+	
+	initial begin
+		clk = 0;
+		#5;
+		forever begin
+			clk = 1;
+			#5;
+			clk = 0;
+			#5;
+		end
+	end
+	
+	initial begin
+		write = 1'b1;
+		write_num = 3'b000;
+		data_in = 16'd5;
+		
+		#5;
+		
+		write_num = 3'b001;
+		data_in = 16'd7;
+		
+		#5;
+		
+		read_num = 3'b000;
+		
+		#10;
+		
+		
+		$stop;
+		
+	

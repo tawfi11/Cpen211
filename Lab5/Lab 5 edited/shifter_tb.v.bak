@@ -1,0 +1,28 @@
+module shifter_tb();
+	reg [15:0] in;
+	reg [1:0] shift;
+	wire [15:0] sout;
+	
+	shifter dut (in,shift,sout);
+	
+	initial begin
+		in = 15'b1111000011001111;
+		shift = 2'b00;
+		
+		#5;
+		
+		shift = 2'b01;
+		
+		#5;
+		
+		shift = 2'b10;
+		
+		#5;
+		
+		shift = 2'b11;
+		
+		#5;
+		
+		$stop;
+	end
+endmodule

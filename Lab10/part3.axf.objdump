@@ -1,0 +1,493 @@
+
+C:/Users/User/Desktop/Lab10part3/part3.axf:     file format elf32-littlearm
+
+
+Disassembly of section .vectors:
+
+00000000 <__cs3_interrupt_vector>:
+   0:	ea00000e 	b	40 <__cs3_region_init_ram>
+   4:	ea00002a 	b	b4 <SERVICE_UND>
+   8:	ea00002a 	b	b8 <SERVICE_SVC>
+   c:	ea00002b 	b	c0 <SERVICE_ABT_INST>
+  10:	ea000029 	b	bc <SERVICE_ABT_DATA>
+  14:	00000000 	.word	0x00000000
+  18:	ea000029 	b	c4 <HPS_GPIO0_IRQ>
+  1c:	ea00003a 	b	10c <SERVICE_FIQ>
+
+Disassembly of section .text:
+
+00000040 <__cs3_region_start_ram>:
+
+.text        
+.global     _start 
+_start:                                     
+/* Set up stack pointers for IRQ and SVC processor modes */
+            MOV     R1, #0b11010010         // interrupts masked, MODE = IRQ
+  40:	e3a010d2 	mov	r1, #210	; 0xd2
+            MSR     CPSR_c, R1              // change to IRQ mode
+  44:	e121f001 	msr	CPSR_c, r1
+            LDR     SP, =A9_ONCHIP_END - 3  // set IRQ stack to top of A9 onchip memory
+  48:	e3e0d003 	mvn	sp, #3
+/* Change to SVC (supervisor) mode with interrupts disabled */
+            MOV     R1, #0b11010011         // interrupts masked, MODE = SVC
+  4c:	e3a010d3 	mov	r1, #211	; 0xd3
+            MSR     CPSR, R1                // change to supervisor mode
+  50:	e129f001 	msr	CPSR_fc, r1
+            LDR     SP, =DDR_END - 3        // set SVC stack to top of DDR3 memory
+  54:	e3e0d10f 	mvn	sp, #-1073741821	; 0xc0000003
+
+            BL      CONFIG_GIC              // configure the ARM generic interrupt controller
+  58:	eb00003b 	bl	14c <CONFIG_GIC>
+
+                                            // write to the pushbutton KEY interrupt mask register
+            LDR     R0, =KEY_BASE           // pushbutton KEY base address
+  5c:	e59f00c8 	ldr	r0, [pc, #200]	; 12c <END_PUT+0x4>
+            MOV     R1, #0xF               // set interrupt mask bits
+  60:	e3a0100f 	mov	r1, #15
+            STR     R1, [R0, #0x8]          // interrupt mask register is (base + 8)
+  64:	e5801008 	str	r1, [r0, #8]
+
+            MOV     R0, #0b01010011         // IRQ unmasked, MODE = SVC
+  68:	e3a00053 	mov	r0, #83	; 0x53
+            MSR     CPSR_c, R0     
+  6c:	e121f000 	msr	CPSR_c, r0
+                                            // enable IRQ interrupts in the processor
+
+            LDR     R0, =MPCORE_PRIV_TIMER           // MPCORE_PRIV_TIMER base address
+  70:	e59f00b8 	ldr	r0, [pc, #184]	; 130 <END_PUT+0x8>
+            LDR     R1, =100000000              //    set load value (1nitialling value)
+  74:	e59f10b8 	ldr	r1, [pc, #184]	; 134 <END_PUT+0xc>
+            STR     R1, [R0]          // load value register is (base)
+  78:	e5801000 	str	r1, [r0]
+
+            MOV     R1, #0b111     //SET I,A,E to 1
+  7c:	e3a01007 	mov	r1, #7
+            STR     R1, [R0, #8]    // I,A,E register is (base + 8)
+  80:	e5801008 	str	r1, [r0, #8]
+
+            LDR     R0, =JTAG_UART_BASE
+  84:	e59f00ac 	ldr	r0, [pc, #172]	; 138 <END_PUT+0x10>
+            MOV     R1, #0b01       //SET RE  to 1 AND WE to 0
+  88:	e3a01001 	mov	r1, #1
+            STRB    R1, [R0, #4]     //RE AND WE ARE IN (base + 4)
+  8c:	e5c01004 	strb	r1, [r0, #4]
+
+00000090 <IDLE>:
+   
+
+IDLE:       
+            LDR R0, =CHAR_FLAG
+  90:	e59f00a4 	ldr	r0, [pc, #164]	; 13c <END_PUT+0x14>
+            LDR R1, [R0]
+  94:	e5901000 	ldr	r1, [r0]
+
+            CMP R1, #1
+  98:	e3510001 	cmp	r1, #1
+            MOVEQ R1, #0
+  9c:	03a01000 	moveq	r1, #0
+            STREq R1, [R0]
+  a0:	05801000 	streq	r1, [r0]
+
+            LDReq R0, =CHAR_BUFFER
+  a4:	059f0094 	ldreq	r0, [pc, #148]	; 140 <END_PUT+0x18>
+            LDReq R0, [R0]
+  a8:	05900000 	ldreq	r0, [r0]
+            
+            BLEQ PUT_JTAG
+  ac:	0b000017 	bleq	110 <PUT_JTAG>
+
+ //           BLEQ READING
+
+            B       IDLE                    // main program simply idles
+  b0:	eafffff6 	b	90 <IDLE>
+
+000000b4 <SERVICE_UND>:
+
+/* Define the exception service routines */
+
+/*--- Undefined instructions --------------------------------------------------*/
+SERVICE_UND:                                
+            B       SERVICE_UND             
+  b4:	eafffffe 	b	b4 <SERVICE_UND>
+
+000000b8 <SERVICE_SVC>:
+
+/*--- Software interrupts -----------------------------------------------------*/
+SERVICE_SVC:                                
+            B       SERVICE_SVC             
+  b8:	eafffffe 	b	b8 <SERVICE_SVC>
+
+000000bc <SERVICE_ABT_DATA>:
+
+/*--- Aborted data reads ------------------------------------------------------*/
+SERVICE_ABT_DATA:                           
+            B       SERVICE_ABT_DATA        
+  bc:	eafffffe 	b	bc <SERVICE_ABT_DATA>
+
+000000c0 <SERVICE_ABT_INST>:
+
+/*--- Aborted instruction fetch -----------------------------------------------*/
+SERVICE_ABT_INST:                           
+            B       SERVICE_ABT_INST        
+  c0:	eafffffe 	b	c0 <SERVICE_ABT_INST>
+
+000000c4 <SERVICE_IRQ>:
+
+/*--- IRQ ---------------------------------------------------------------------*/
+SERVICE_IRQ:                                
+            PUSH    {R0-R7, LR}             
+  c4:	e92d40ff 	push	{r0, r1, r2, r3, r4, r5, r6, r7, lr}
+
+/* Read the ICCIAR from the CPU interface */
+            LDR     R4, =MPCORE_GIC_CPUIF   
+  c8:	e59f4074 	ldr	r4, [pc, #116]	; 144 <END_PUT+0x1c>
+            LDR     R5, [R4, #ICCIAR]       // read from ICCIAR
+  cc:	e594500c 	ldr	r5, [r4, #12]
+
+000000d0 <FPGA_IRQ1_HANDLER>:
+
+FPGA_IRQ1_HANDLER:                          
+            CMP     R5, #KEYS_IRQ           
+  d0:	e3550049 	cmp	r5, #73	; 0x49
+            BLEQ    KEY_ISR
+  d4:	0b000045 	bleq	1f0 <KEY_ISR>
+            CMP     R5, #KEYS_IRQ
+  d8:	e3550049 	cmp	r5, #73	; 0x49
+            BEQ     EXIT_IRQ
+  dc:	0a000007 	beq	100 <EXIT_IRQ>
+
+            CMP     R5, #MPCORE_PRIV_TIMER_IRQ
+  e0:	e355001d 	cmp	r5, #29
+            BLEQ    TIMER_ISR
+  e4:	0b00005b 	bleq	258 <TIMER_ISR>
+            BEQ     EXIT_IRQ
+  e8:	0a000004 	beq	100 <EXIT_IRQ>
+
+            CMP      R5, #JTAG_IRQ
+  ec:	e3550050 	cmp	r5, #80	; 0x50
+            BLEQ     JTAG_ISR
+  f0:	0b000067 	bleq	294 <JTAG_ISR>
+            CMP      R5, #JTAG_IRQ
+  f4:	e3550050 	cmp	r5, #80	; 0x50
+            BEQ      EXIT_IRQ
+  f8:	0a000000 	beq	100 <EXIT_IRQ>
+
+000000fc <UNEXPECTED>:
+
+UNEXPECTED: B     UNEXPECTED              // if not recognized, stop here
+  fc:	eafffffe 	b	fc <UNEXPECTED>
+
+00000100 <EXIT_IRQ>:
+
+EXIT_IRQ:                                   
+/* Write to the End of Interrupt Register (ICCEOIR) */
+            STR     R5, [R4, #ICCEOIR]      // write to ICCEOIR
+ 100:	e5845010 	str	r5, [r4, #16]
+
+            POP     {R0-R7, LR}             
+ 104:	e8bd40ff 	pop	{r0, r1, r2, r3, r4, r5, r6, r7, lr}
+            SUBS    PC, LR, #4              
+ 108:	e25ef004 	subs	pc, lr, #4
+
+0000010c <SERVICE_FIQ>:
+
+/*--- FIQ ---------------------------------------------------------------------*/
+SERVICE_FIQ:                                
+            B       SERVICE_FIQ             
+ 10c:	eafffffe 	b	10c <SERVICE_FIQ>
+
+00000110 <PUT_JTAG>:
+       
+
+PUT_JTAG:
+      LDR R1, =0xFF201000 // JTAG UART base address
+ 110:	e59f1020 	ldr	r1, [pc, #32]	; 138 <END_PUT+0x10>
+      LDR R2, [R1, #4] // read the JTAG UART control register
+ 114:	e5912004 	ldr	r2, [r1, #4]
+      LDR R3, =0xFFFF
+ 118:	e59f3028 	ldr	r3, [pc, #40]	; 148 <END_PUT+0x20>
+      ANDS R2, R2, R3 // check for write space
+ 11c:	e0122003 	ands	r2, r2, r3
+      BEQ END_PUT // if no space, ignore the character
+ 120:	0a000000 	beq	128 <END_PUT>
+      STR R0, [R1] // send the character
+ 124:	e5810000 	str	r0, [r1]
+
+00000128 <END_PUT>:
+END_PUT:  BX LR
+ 128:	e12fff1e 	bx	lr
+ 12c:	ff200050 	.word	0xff200050
+ 130:	fffec600 	.word	0xfffec600
+ 134:	05f5e100 	.word	0x05f5e100
+ 138:	ff201000 	.word	0xff201000
+ 13c:	00000290 	.word	0x00000290
+ 140:	0000028c 	.word	0x0000028c
+ 144:	fffec100 	.word	0xfffec100
+ 148:	0000ffff 	.word	0x0000ffff
+
+0000014c <CONFIG_GIC>:
+/* 
+ * Configure the Generic Interrupt Controller (GIC)
+*/
+				.global	CONFIG_GIC
+CONFIG_GIC:
+				PUSH		{LR}
+ 14c:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+    			/* To configure the FPGA KEYS interrupt (ID 73):
+				 *	1. set the target to cpu0 in the ICDIPTRn register
+				 *	2. enable the interrupt in the ICDISERn register */
+				/* CONFIG_INTERRUPT (int_ID (R0), CPU_target (R1)); */
+    			MOV		R0, #73					// KEY port (interrupt ID = 73)
+ 150:	e3a00049 	mov	r0, #73	; 0x49
+    			MOV		R1, #1					// this field is a bit-mask; bit 0 targets cpu0
+ 154:	e3a01001 	mov	r1, #1
+    			BL			CONFIG_INTERRUPT
+ 158:	eb00000d 	bl	194 <CONFIG_INTERRUPT>
+
+                MOV     R0, #80                 // KEY port (interrupt ID = 73)
+ 15c:	e3a00050 	mov	r0, #80	; 0x50
+                MOV     R1, #1                  // this field is a bit-mask; bit 0 targets cpu0
+ 160:	e3a01001 	mov	r1, #1
+                BL          CONFIG_INTERRUPT
+ 164:	eb00000a 	bl	194 <CONFIG_INTERRUPT>
+
+                MOV     R0, #29                 // KEY port (interrupt ID = 73)
+ 168:	e3a0001d 	mov	r0, #29
+                MOV     R1, #1                  // this field is a bit-mask; bit 0 targets cpu0
+ 16c:	e3a01001 	mov	r1, #1
+                BL          CONFIG_INTERRUPT
+ 170:	eb000007 	bl	194 <CONFIG_INTERRUPT>
+
+				/* configure the GIC CPU interface */
+    			LDR		R0, =MPCORE_GIC_CPUIF	// base address of CPU interface
+ 174:	e59f0060 	ldr	r0, [pc, #96]	; 1dc <CONFIG_INTERRUPT+0x48>
+    			/* Set Interrupt Priority Mask Register (ICCPMR) */
+    			LDR		R1, =0xFFFF 			// enable interrupts of all priorities levels
+ 178:	e59f1060 	ldr	r1, [pc, #96]	; 1e0 <CONFIG_INTERRUPT+0x4c>
+    			STR		R1, [R0, #ICCPMR]
+ 17c:	e5801004 	str	r1, [r0, #4]
+    			/* Set the enable bit in the CPU Interface Control Register (ICCICR). This bit
+				 * allows interrupts to be forwarded to the CPU(s) */
+    			MOV		R1, #1
+ 180:	e3a01001 	mov	r1, #1
+    			STR		R1, [R0]
+ 184:	e5801000 	str	r1, [r0]
+    
+    			/* Set the enable bit in the Distributor Control Register (ICDDCR). This bit
+				 * allows the distributor to forward interrupts to the CPU interface(s) */
+    			LDR		R0, =MPCORE_GIC_DIST
+ 188:	e59f0054 	ldr	r0, [pc, #84]	; 1e4 <CONFIG_INTERRUPT+0x50>
+    			STR		R1, [R0]    
+ 18c:	e5801000 	str	r1, [r0]
+    
+    			POP     	{PC}
+ 190:	e49df004 	pop	{pc}		; (ldr pc, [sp], #4)
+
+00000194 <CONFIG_INTERRUPT>:
+ * other registers in the GIC
+ * Arguments: R0 = interrupt ID, N
+ *            R1 = CPU target
+*/
+CONFIG_INTERRUPT:
+    			PUSH		{R4-R5, LR}
+ 194:	e92d4030 	push	{r4, r5, lr}
+    
+    			/* Configure Interrupt Set-Enable Registers (ICDISERn). 
+				 * reg_offset = (integer_div(N / 32) * 4
+				 * value = 1 << (N mod 32) */
+    			LSR		R4, R0, #3							// calculate reg_offset
+ 198:	e1a041a0 	lsr	r4, r0, #3
+    			BIC		R4, R4, #3							// R4 = reg_offset
+ 19c:	e3c44003 	bic	r4, r4, #3
+				LDR		R2, =MPCORE_GIC_DIST+ICDISER
+ 1a0:	e59f2040 	ldr	r2, [pc, #64]	; 1e8 <CONFIG_INTERRUPT+0x54>
+				ADD		R4, R2, R4							// R4 = address of ICDISER
+ 1a4:	e0824004 	add	r4, r2, r4
+    
+    			AND		R2, R0, #0x1F   					// N mod 32
+ 1a8:	e200201f 	and	r2, r0, #31
+				MOV		R5, #1								// enable
+ 1ac:	e3a05001 	mov	r5, #1
+    			LSL		R2, R5, R2							// R2 = value
+ 1b0:	e1a02215 	lsl	r2, r5, r2
+
+				/* now that we have the register address (R4) and value (R2), we need to set the
+				 * correct bit in the GIC register */
+    			LDR		R3, [R4]								// read current register value
+ 1b4:	e5943000 	ldr	r3, [r4]
+    			ORR		R3, R3, R2							// set the enable bit
+ 1b8:	e1833002 	orr	r3, r3, r2
+    			STR		R3, [R4]								// store the new register value
+ 1bc:	e5843000 	str	r3, [r4]
+
+    			/* Configure Interrupt Processor Targets Register (ICDIPTRn)
+     			 * reg_offset = integer_div(N / 4) * 4
+     			 * index = N mod 4 */
+    			BIC		R4, R0, #3							// R4 = reg_offset
+ 1c0:	e3c04003 	bic	r4, r0, #3
+				LDR		R2, =MPCORE_GIC_DIST+ICDIPTR
+ 1c4:	e59f2020 	ldr	r2, [pc, #32]	; 1ec <CONFIG_INTERRUPT+0x58>
+				ADD		R4, R2, R4							// R4 = word address of ICDIPTR
+ 1c8:	e0824004 	add	r4, r2, r4
+    			AND		R2, R0, #0x3						// N mod 4
+ 1cc:	e2002003 	and	r2, r0, #3
+				ADD		R4, R2, R4							// R4 = byte address in ICDIPTR
+ 1d0:	e0824004 	add	r4, r2, r4
+
+				/* now that we have the register address (R4) and value (R2), write to (only)
+				 * the appropriate byte */
+				STRB		R1, [R4]
+ 1d4:	e5c41000 	strb	r1, [r4]
+    
+    			POP		{R4-R5, PC}
+ 1d8:	e8bd8030 	pop	{r4, r5, pc}
+ 1dc:	fffec100 	.word	0xfffec100
+ 1e0:	0000ffff 	.word	0x0000ffff
+ 1e4:	fffed000 	.word	0xfffed000
+ 1e8:	fffed100 	.word	0xfffed100
+ 1ec:	fffed800 	.word	0xfffed800
+
+000001f0 <KEY_ISR>:
+
+
+
+.global     KEY_ISR 
+KEY_ISR:                        
+        LDR     R0, =KEY_BASE   // base address of pushbutton KEY port
+ 1f0:	e59f0054 	ldr	r0, [pc, #84]	; 24c <END_KEY_ISR+0x8>
+        LDR     R1, [R0, #0xC]  // read edge capture register
+ 1f4:	e590100c 	ldr	r1, [r0, #12]
+        MOV     R2, #0xF        
+ 1f8:	e3a0200f 	mov	r2, #15
+        STR     R2, [R0, #0xC]  // clear the interrupt
+ 1fc:	e580200c 	str	r2, [r0, #12]
+
+        LDR     R0, =LED_BASE   // based address of LED display
+ 200:	e59f0048 	ldr	r0, [pc, #72]	; 250 <END_KEY_ISR+0xc>
+
+00000204 <CHECK_KEY0>:
+CHECK_KEY0:                     
+        MOV     R3, #0x1        
+ 204:	e3a03001 	mov	r3, #1
+        ANDS    R3, R3, R1      // check for KEY0
+ 208:	e0133001 	ands	r3, r3, r1
+        BEQ     CHECK_KEY1      
+ 20c:	0a000001 	beq	218 <CHECK_KEY1>
+        MOV     R2, #0b1        
+ 210:	e3a02001 	mov	r2, #1
+        B       END_KEY_ISR     
+ 214:	ea00000a 	b	244 <END_KEY_ISR>
+
+00000218 <CHECK_KEY1>:
+CHECK_KEY1:
+	MOV	R3, #0x2
+ 218:	e3a03002 	mov	r3, #2
+	ANDS	R3, R3, R1	// check for KEY1
+ 21c:	e0133001 	ands	r3, r3, r1
+	BEQ	CHECK_KEY2                     
+ 220:	0a000001 	beq	22c <CHECK_KEY2>
+        MOV     R2, #0b10 
+ 224:	e3a02002 	mov	r2, #2
+	B	END_KEY_ISR
+ 228:	ea000005 	b	244 <END_KEY_ISR>
+
+0000022c <CHECK_KEY2>:
+CHECK_KEY2:
+	MOV	R3, #0x4
+ 22c:	e3a03004 	mov	r3, #4
+	ANDS	R3, R3, R1	// check for KEY2
+ 230:	e0133001 	ands	r3, r3, r1
+	BEQ	CHECK_KEY3                     
+ 234:	0a000001 	beq	240 <CHECK_KEY3>
+        MOV     R2, #0b100 
+ 238:	e3a02004 	mov	r2, #4
+	B	END_KEY_ISR
+ 23c:	ea000000 	b	244 <END_KEY_ISR>
+
+00000240 <CHECK_KEY3>:
+CHECK_KEY3:                     
+        MOV     R2, #0b1000    
+ 240:	e3a02008 	mov	r2, #8
+
+00000244 <END_KEY_ISR>:
+END_KEY_ISR:                    
+        STR     R2, [R0]        // display KEY pressed on LED
+ 244:	e5802000 	str	r2, [r0]
+        BX      LR              
+ 248:	e12fff1e 	bx	lr
+ 24c:	ff200050 	.word	0xff200050
+ 250:	ff200000 	.word	0xff200000
+
+00000254 <my_counter>:
+
+my_counter: 	.word 0x0
+
+TIMER_ISR:
+
+     	LDR R0, =my_counter
+ 254:	00000000 	.word	0x00000000
+
+00000258 <TIMER_ISR>:
+ 258:	e59f0020 	ldr	r0, [pc, #32]	; 280 <TIMER_ISR+0x28>
+     	LDR R1, [R0]
+ 25c:	e5901000 	ldr	r1, [r0]
+
+     	ADD R1, R1, #1
+ 260:	e2811001 	add	r1, r1, #1
+
+     	STR R1, [R0]
+ 264:	e5801000 	str	r1, [r0]
+
+     	LDR R0, =LED_BASE
+ 268:	e59f0014 	ldr	r0, [pc, #20]	; 284 <TIMER_ISR+0x2c>
+		STR R1, [R0]
+ 26c:	e5801000 	str	r1, [r0]
+
+        LDR R0, =MPCORE_PRIV_TIMER
+ 270:	e59f0010 	ldr	r0, [pc, #16]	; 288 <TIMER_ISR+0x30>
+     	MOV R1, #1
+ 274:	e3a01001 	mov	r1, #1
+     	STR R1, [R0, #12]
+ 278:	e580100c 	str	r1, [r0, #12]
+
+     	BX      LR   
+ 27c:	e12fff1e 	bx	lr
+ 280:	00000254 	.word	0x00000254
+ 284:	ff200000 	.word	0xff200000
+ 288:	fffec600 	.word	0xfffec600
+
+0000028c <CHAR_BUFFER>:
+CHAR_FLAG:
+.word 0x0
+
+JTAG_ISR:
+
+      LDR R0, =JTAG_UART_BASE
+ 28c:	000000ff 	.word	0x000000ff
+
+00000290 <CHAR_FLAG>:
+ 290:	00000000 	.word	0x00000000
+
+00000294 <JTAG_ISR>:
+ 294:	e59f0018 	ldr	r0, [pc, #24]	; 2b4 <__cs3_region_init_size_ram+0x1c>
+      LDR R1, [R0]
+ 298:	e5901000 	ldr	r1, [r0]
+     // LDR R2, =0xFFFF0000
+     // AND R1, R1, R2
+      LDR R0, =CHAR_BUFFER
+ 29c:	e59f0014 	ldr	r0, [pc, #20]	; 2b8 <__cs3_region_init_size_ram+0x20>
+      STR R1, [R0]
+ 2a0:	e5801000 	str	r1, [r0]
+
+      LDR R0, =CHAR_FLAG
+ 2a4:	e59f0010 	ldr	r0, [pc, #16]	; 2bc <__cs3_region_init_size_ram+0x24>
+      MOV R1, #1
+ 2a8:	e3a01001 	mov	r1, #1
+      STR R1, [R0]
+ 2ac:	e5801000 	str	r1, [r0]
+
+      BX LR
+ 2b0:	e12fff1e 	bx	lr
+ 2b4:	ff201000 	.word	0xff201000
+ 2b8:	0000028c 	.word	0x0000028c
+ 2bc:	00000290 	.word	0x00000290

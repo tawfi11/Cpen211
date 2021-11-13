@@ -1,0 +1,9 @@
+.double 1.000
+.double 1.000
+.double 1.000
+.double 2.000
+.double 2.000
+.double 2.000
+.double 3.000
+.double 3.000
+.double 3.000

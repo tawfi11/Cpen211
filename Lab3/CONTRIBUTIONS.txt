@@ -1,0 +1,5 @@
+Nusair worked on the Detectwinner function, and wrote the testbench for that. Nusair connected the playadjacent function to the rest of the gameplay logic
+
+Rituraj created the PlayAdjacent function, and wrote the testbench to test that, and the overall gameplay.
+
+The work was divided very evenly.
